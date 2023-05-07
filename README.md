@@ -1,7 +1,7 @@
 # DESAFIO GO 
 basta apenas rodar o comando: 
 <br>
-docker run brunoamoedo/desafiogo
+<b>docker run brunoamoedo/desafiogo</b>
 <br>
 nome da imagem: brunoamoedo/desafiogo 
 <br>
