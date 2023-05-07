@@ -21,14 +21,14 @@ app.get('/', (req, res) => {
         console.error('Erro ao executar a query:', error);
         return;
       }
-      // Renderiza a p·gina HTML com o resultado da query
+      // Renderiza a p√°gina HTML com o resultado da query
       res.send(`
         <html>
           <head>
             <title>Full cycle</title>
           </head>
           <body>
-            <h1 style="text-align:center">Full cycle rockets</h1>
+            <h1 style="text-align:center">Full Cycle Rocks!!</h1>
             <table>
               <thead>
                 <tr>
