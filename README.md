@@ -11,4 +11,4 @@ link: https://hub.docker.com/repository/docker/brunoamoedo/desafiogo/general
 <br>
 de um git clone na pasta que você desejar e rode o comando:
 <br>
-docker-compose up -d 
+<b>docker-compose up -d</b> 
