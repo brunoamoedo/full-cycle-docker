@@ -13,12 +13,44 @@ const connection = mysql.createConnection(config)
 
 const sql = `INSERT INTO people(nome) values('Bruno')`
 connection.query(sql)
-connection.end()
 
-app.get('/',(req,res)=>{
-    res.send("<h1>Full Cycle Rocks!</h1>")
 
-})
+app.get('/', (req, res) => {
+    connection.query('SELECT * FROM people', (error, results) => {
+      if (error) {
+        console.error('Erro ao executar a query:', error);
+        return;
+      }
+      // Renderiza a página HTML com o resultado da query
+      res.send(`
+        <html>
+          <head>
+            <title>Full cycle</title>
+          </head>
+          <body>
+            <h1 style="text-align:center">Full cycle rockets</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                ${results.map(row => `
+                  <tr>
+                    <td> ${row.id} - </td>
+                    <td> ${row.nome}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </body>
+        </html>
+      `);
+    });
+  });
 app.listen(port,()=>{
     console.log('rodando na porta' + port)
 })
